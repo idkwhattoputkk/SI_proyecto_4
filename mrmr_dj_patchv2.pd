@@ -1,0 +1,60 @@
+#N canvas 100 50 950 700 10;
+#X text 40 20 DJ Patch – Mrmr OSC Controller (funcional y sin type mismatch);
+#X text 40 40 Slider0=freq | Slider1=volumen | Botón2=reproduce sample.wav;
+#X obj 40 80 netreceive -u -b 8000;
+#X obj 40 110 oscparse;
+#X obj 40 140 list trim;
+#X obj 40 170 route mrmr;
+#X obj 40 200 route slider pushbutton;
+#X obj 200 200 unpack s f s f;
+#X obj 200 230 route 0 1;
+#X obj 200 260 / 1023;
+#X obj 200 290 * 800;
+#X obj 200 320 + 200;
+#X obj 200 350 s freq;
+#X obj 300 260 / 1023;
+#X obj 300 290 s vol;
+
+#----- OSCILLATOR -----
+#X obj 200 390 r freq;
+#X obj 200 420 osc~;
+#X obj 200 450 *~;
+#X obj 300 450 r vol;
+#X obj 200 480 dac~;
+
+#----- BOTÓN SAMPLE -----
+#X obj 450 200 unpack f s f;
+#X obj 450 230 route 2;
+#X obj 450 260 sel 1000;
+#X msg 450 290 open sample.wav, start;
+#X obj 450 320 readsf~ 2;
+#X connect 450 260 450 290;
+#X connect 450 290 450 320;
+#X connect 450 320 200 480;
+
+#----- CONEXIONES PRINCIPALES -----
+#X connect 40 80 40 110;
+#X connect 40 110 40 140;
+#X connect 40 140 40 170;
+#X connect 40 170 40 200;
+
+# Sliders
+#X connect 40 200 200 200;
+#X connect 200 200 200 230;
+#X connect 200 230 200 260;
+#X connect 200 260 200 290;
+#X connect 200 290 200 320;
+#X connect 200 320 200 350;
+#X connect 200 230 300 260;
+#X connect 300 260 300 290;
+
+# Oscillator
+#X connect 200 390 200 420;
+#X connect 200 420 200 450;
+#X connect 300 450 200 450;
+#X connect 200 450 200 480;
+
+# Botón
+#X connect 40 200 450 200;
+#X connect 450 200 450 230;
+#X connect 450 230 450 260;
