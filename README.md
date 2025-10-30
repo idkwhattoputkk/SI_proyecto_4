@@ -36,7 +36,7 @@ Para poner en marcha el sistema, sigue los siguientes pasos:
 1.  **Conexión de Red:** Asegúrate de que el **iPhone** (con Mrmr) y el **Mac** (con PD) estén conectados a la **misma red Wi-Fi**.
 2.  **Preparación de Pure Data:**
     * Abre Pure Data (versión *vanilla* es compatible).
-    * Carga el *patch* **`mrmr_dj_final_fixed.pd`**.
+    * Carga el *patch* **`mrmr_dj_patch.pd`**.
     * Activa el **DSP** (**Audio ON**) en Pure Data.
 3.  **Configuración de Mrmr (iPhone):**
     * En la aplicación Mrmr, configura los siguientes parámetros de conexión:
