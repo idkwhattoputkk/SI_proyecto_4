@@ -1,0 +1,18 @@
+#N canvas 100 50 600 400 12;
+#X text 30 10 TEST DIAGNOSTICO - Mrmr;
+#X text 30 30 Si ves mensajes abajo \, la conexion funciona;
+#X obj 40 80 netreceive -u -b 8000;
+#X obj 40 110 print RECIBIDO;
+#X obj 40 140 oscparse;
+#X obj 40 170 print PARSEADO;
+#X obj 40 200 list trim;
+#X obj 40 230 print LIMPIO;
+#X text 30 280 INSTRUCCIONES:;
+#X text 30 300 1. Mueve cualquier control en Mrmr;
+#X text 30 320 2. Mira la consola de PD (Window -> Pd window);
+#X text 30 340 3. Copia TODO lo que aparezca y enviamelo;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;

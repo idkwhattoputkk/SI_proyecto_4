@@ -23,7 +23,7 @@ La interacción se basa en el siguiente mapeo de control:
 
 **Detalles de Software:**
 * **Mrmr OSC Controller (iOS):** Aplicación de envío de mensajes OSC.
-* **Pure Data Patch:** `mrmr_dj_final_fixed.pd`
+* **Pure Data Patch:** `mrmr_dj_patchv2.pd`
     * Puerto de recepción **UDP**: `8000`
     * Funcionalidad: Recepción de OSC, conversión a señal de control, generación de audio (oscilador, control de volumen y *sample player*).
 
@@ -36,7 +36,7 @@ Para poner en marcha el sistema, sigue los siguientes pasos:
 1.  **Conexión de Red:** Asegúrate de que el **iPhone** (con Mrmr) y el **Mac** (con PD) estén conectados a la **misma red Wi-Fi**.
 2.  **Preparación de Pure Data:**
     * Abre Pure Data (versión *vanilla* es compatible).
-    * Carga el *patch* **`mrmr_dj_final_fixed.pd`**.
+    * Carga el *patch* **`mrmr_dj_patchv2.pd`**.
     * Activa el **DSP** (**Audio ON**) en Pure Data.
 3.  **Configuración de Mrmr (iPhone):**
     * En la aplicación Mrmr, configura los siguientes parámetros de conexión:
@@ -49,7 +49,7 @@ Para poner en marcha el sistema, sigue los siguientes pasos:
 ### 🧱 Estructura del Repositorio
 
 ├── README.md                 <-- Documentación actual
-├── mrmr_dj_final_fixed.pd    <-- Archivo principal de Pure Data
+├── mrmr_dj_patchv2.pd    <-- Archivo principal de Pure Data
 └── sample.wav                <-- Archivo de audio requerido por el patch
 
 ---
